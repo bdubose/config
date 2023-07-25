@@ -1,11 +1,12 @@
 package config_test
 
 import (
-	"strings"
-	"github.com/jgpruitt/config"
 	"fmt"
-	"time"
 	"net"
+	"strings"
+	"time"
+
+	"github.com/bdubose/config"
 )
 
 func ExampleRead() {
@@ -31,7 +32,7 @@ func ExampleRead() {
 	number, _ := def.IntOrDefault("number", 42)
 	fmt.Println("number =", number)
 
-	every, _ := def.DurationOrDefault("every", time.Minute * 9)
+	every, _ := def.DurationOrDefault("every", time.Minute*9)
 	fmt.Println("every =", every)
 
 	db := cfgs["database"]
